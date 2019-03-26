@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import axios from "axios";
-import ApprovedBallotList from "./ApprovedBallotList";
-import CompleteBallotList from "./CompleteBallotList";
+import ApprovedBallotListNoVote from "./ApprovedBallotList";
 import PendingBallotList from "./PendingBallotList";
 
 class AdminPage extends Component {
@@ -43,21 +42,35 @@ class AdminPage extends Component {
     };
 
     getApprovedBallots = () => {
-        return <ApprovedBallotList
-            ballots={this.state.ballots}
-        />
-    };
-
-    getAllBallots = () => {
-        return <CompleteBallotList
-            ballots={this.state.ballots}
+        return <ApprovedBallotListNoVote
+            ballots={this.state.approvedBallots}
         />
     };
 
     getPendingBallots = () => {
         return <PendingBallotList
-            ballots={this.state.ballots}
+            ballots={this.state.pendingBallots}
         />
+    };
+
+    getApproveButton = () => {
+        return (
+            <div className="col-sm text-center">
+                <a role="button" onClick={this.approve}>
+                    <span>Approve</span>
+                </a>
+            </div>
+        )
+    };
+
+    getDenyButton = () => {
+        return (
+            <div className="col-sm text-center">
+                <a role="button" onClick={this.deny}>
+                    <span>Deny</span>
+                </a>
+            </div>
+        )
     };
 
     render() {
@@ -76,4 +89,5 @@ class AdminPage extends Component {
         )
     }
 }
+
 export default AdminPage;

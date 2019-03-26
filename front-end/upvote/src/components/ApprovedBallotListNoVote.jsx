@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function CompleteBallotList(props) {
+function ApprovedBallotListNoVote(props) {
 
     return (
         <table className="table-bordered table-striped">
@@ -28,4 +28,4 @@ function CompleteBallotList(props) {
     )
 
 }
-export default CompleteBallotList;
+export default ApprovedBallotListNoVote;

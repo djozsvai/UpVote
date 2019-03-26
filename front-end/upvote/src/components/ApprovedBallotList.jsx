@@ -3,7 +3,6 @@ import React from "react";
 
 function ApprovedBallotList(props) {
 
-
     return (
         <table className="table-bordered table-striped">
             <thead>
