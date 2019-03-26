@@ -39,7 +39,10 @@ public class Ballot {
     }
 
     public void addVote() {
+        System.out.println("########## number of votes before: " + this.votes);
         this.votes += 1;
+        System.out.println("########## number of votes after: " + this.votes);
+
     }
 
     public String getDescription() {
